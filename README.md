@@ -63,7 +63,7 @@ Rasheedah automatically detects her operating mode based on your environment var
 You only ever run **one command**:
 
 ```bash
-npm run start:dev
+npm run start
 ```
 
 Depending on the ENV configuration, she will choose:
