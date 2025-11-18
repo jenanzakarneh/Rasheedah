@@ -20,7 +20,6 @@ export class ChatOrchestratorService {
     });
   }
 
-
   async handleMessage(userId: string, userInput: string): Promise<string> {
     const { reply, routingPayload } = await this.openai.generateResponse(
       userId,
@@ -40,7 +39,6 @@ export class ChatOrchestratorService {
     } catch (err) {
       const errorMsg = err?.response?.message || err.message || 'Unknown error';
 
-   
       await this.openai.injectSystemFeedback(
         userId,
         `The backend rejected your last values with this message: "${errorMsg}". 

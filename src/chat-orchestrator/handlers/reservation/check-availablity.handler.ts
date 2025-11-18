@@ -12,9 +12,7 @@ export class CheckAvailabilityHandler extends BaseIntentHandler {
 
   async execute(payload: any): Promise<string> {
     const date = payload.date;
-    const slots = await this.reservationService.getAvailableSlots(
-      date,
-    );
+    const slots = await this.reservationService.getAvailableSlots(date);
 
     if (!slots.length) {
       return ` Sorry, no available slots on ${date} at the moment.`;

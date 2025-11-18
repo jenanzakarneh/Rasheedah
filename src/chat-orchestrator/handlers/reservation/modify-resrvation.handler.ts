@@ -15,7 +15,7 @@ export class ModifyReservationHandler extends BaseIntentHandler {
     }
 
     const dto = {
-      date: p.date, 
+      date: p.date,
       timeSlot: p.timeSlot,
       partySize: p.partySize ? Number(p.partySize) : undefined,
     };

@@ -4,7 +4,7 @@ export interface Reservation {
   id: string;
   name: string;
   phone: string;
-  date: string; 
+  date: string;
   timeSlot: string;
   partySize: number;
   status: ReservationStatus;

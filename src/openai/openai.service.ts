@@ -197,7 +197,7 @@ EXAMPLES OF GOOD RESPONSES
     // If last 3 replies are identical → loop detected
     if (list.length >= 3) {
       const last3 = list.slice(-3);
-      const isLoop = last3.every(r => r === last3[0]);
+      const isLoop = last3.every((r) => r === last3[0]);
 
       if (isLoop) {
         this.logger.warn(`Loop detected for ${userId}`);
@@ -215,7 +215,6 @@ EXAMPLES OF GOOD RESPONSES
     userId: string,
     userInput: string,
   ): Promise<{ reply: string; routingPayload?: any }> {
-
     if (!this.openai) {
       return {
         reply: 'OpenAI is disabled because no API key is configured.',
@@ -247,7 +246,8 @@ EXAMPLES OF GOOD RESPONSES
     if (this.detectLoop(userId, llmReply)) {
       this.resetConversation(userId);
       return {
-        reply: "I feel like we're going in circles 😅 — let's start fresh.\nHow can I help you?"
+        reply:
+          "I feel like we're going in circles 😅 — let's start fresh.\nHow can I help you?",
       };
     }
 
